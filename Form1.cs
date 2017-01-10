@@ -26,6 +26,7 @@ namespace Winform_SerialPortTools
         private string[] strStopBit = { "1","2"};
 
         private Boolean bfPortState;
+        private SerialPort serialPort;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -41,6 +42,12 @@ namespace Winform_SerialPortTools
             Init_PortParityBit();
             Init_PortDataBit();
             Init_PortStopBit();
+            serialPort = new SerialPort();
+            serialPort.BaudRate = 9600;
+            serialPort.StopBits = StopBits.One;
+            serialPort.DataBits = 8;
+            serialPort.Parity = Parity.None;
+
         }
 
         private void Init_PortName()
