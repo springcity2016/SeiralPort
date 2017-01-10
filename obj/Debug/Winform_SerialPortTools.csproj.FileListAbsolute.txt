@@ -1,0 +1,9 @@
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\bin\Debug\Winform_SerialPortTools.exe.config
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\bin\Debug\Winform_SerialPortTools.exe
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\bin\Debug\Winform_SerialPortTools.pdb
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\obj\Debug\Winform_SerialPortTools.csprojResolveAssemblyReference.cache
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\obj\Debug\Winform_SerialPortTools.Form1.resources
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\obj\Debug\Winform_SerialPortTools.Properties.Resources.resources
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\obj\Debug\Winform_SerialPortTools.csproj.GenerateResource.Cache
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\obj\Debug\Winform_SerialPortTools.exe
+E:\2017_PJT\1st_Month\2nd_Week_PJT\Winform_SerialPortTools\obj\Debug\Winform_SerialPortTools.pdb
