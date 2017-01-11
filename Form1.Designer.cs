@@ -32,6 +32,7 @@
             this.cb_PortName = new System.Windows.Forms.ComboBox();
             this.cb_BaudRate = new System.Windows.Forms.ComboBox();
             this.grp_PortSet = new System.Windows.Forms.GroupBox();
+            this.pb_PortState = new System.Windows.Forms.PictureBox();
             this.cb_StopBit = new System.Windows.Forms.ComboBox();
             this.lab_StopBit = new System.Windows.Forms.Label();
             this.cb_DataBit = new System.Windows.Forms.ComboBox();
@@ -40,18 +41,20 @@
             this.cb_ParityBit = new System.Windows.Forms.ComboBox();
             this.lab_BaudRate = new System.Windows.Forms.Label();
             this.lab_Port = new System.Windows.Forms.Label();
-            this.pb_PortState = new System.Windows.Forms.PictureBox();
+            this.btn_CheckPort = new System.Windows.Forms.Button();
+            this.cb_Char = new System.Windows.Forms.CheckBox();
+            this.cb_Hex = new System.Windows.Forms.CheckBox();
             this.grp_PortSet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_PortState)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Port
             // 
-            this.btn_Port.Location = new System.Drawing.Point(55, 150);
+            this.btn_Port.Location = new System.Drawing.Point(80, 190);
             this.btn_Port.Name = "btn_Port";
-            this.btn_Port.Size = new System.Drawing.Size(89, 33);
+            this.btn_Port.Size = new System.Drawing.Size(66, 33);
             this.btn_Port.TabIndex = 0;
-            this.btn_Port.Text = "OpenPort";
+            this.btn_Port.Text = "打开串口";
             this.btn_Port.UseVisualStyleBackColor = true;
             this.btn_Port.Click += new System.EventHandler(this.btn_Port_Click);
             // 
@@ -61,7 +64,7 @@
             this.cb_PortName.FormattingEnabled = true;
             this.cb_PortName.Location = new System.Drawing.Point(55, 20);
             this.cb_PortName.Name = "cb_PortName";
-            this.cb_PortName.Size = new System.Drawing.Size(89, 20);
+            this.cb_PortName.Size = new System.Drawing.Size(91, 20);
             this.cb_PortName.TabIndex = 1;
             // 
             // cb_BaudRate
@@ -69,11 +72,14 @@
             this.cb_BaudRate.FormattingEnabled = true;
             this.cb_BaudRate.Location = new System.Drawing.Point(55, 46);
             this.cb_BaudRate.Name = "cb_BaudRate";
-            this.cb_BaudRate.Size = new System.Drawing.Size(89, 20);
+            this.cb_BaudRate.Size = new System.Drawing.Size(91, 20);
             this.cb_BaudRate.TabIndex = 3;
             // 
             // grp_PortSet
             // 
+            this.grp_PortSet.Controls.Add(this.cb_Hex);
+            this.grp_PortSet.Controls.Add(this.cb_Char);
+            this.grp_PortSet.Controls.Add(this.btn_CheckPort);
             this.grp_PortSet.Controls.Add(this.pb_PortState);
             this.grp_PortSet.Controls.Add(this.cb_StopBit);
             this.grp_PortSet.Controls.Add(this.lab_StopBit);
@@ -88,17 +94,32 @@
             this.grp_PortSet.Controls.Add(this.cb_BaudRate);
             this.grp_PortSet.Location = new System.Drawing.Point(5, 5);
             this.grp_PortSet.Name = "grp_PortSet";
-            this.grp_PortSet.Size = new System.Drawing.Size(150, 189);
+            this.grp_PortSet.Size = new System.Drawing.Size(158, 229);
             this.grp_PortSet.TabIndex = 4;
             this.grp_PortSet.TabStop = false;
+            // 
+            // pb_PortState
+            // 
+            this.pb_PortState.BackColor = System.Drawing.SystemColors.Control;
+            this.pb_PortState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pb_PortState.ErrorImage = global::Winform_SerialPortTools.Properties.Resources.BlackLED_Close_PortState;
+            this.pb_PortState.Image = global::Winform_SerialPortTools.Properties.Resources.BlackLED_Close_PortState;
+            this.pb_PortState.InitialImage = global::Winform_SerialPortTools.Properties.Resources.BlackLED_Close_PortState;
+            this.pb_PortState.Location = new System.Drawing.Point(8, 148);
+            this.pb_PortState.Name = "pb_PortState";
+            this.pb_PortState.Size = new System.Drawing.Size(39, 39);
+            this.pb_PortState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pb_PortState.TabIndex = 5;
+            this.pb_PortState.TabStop = false;
             // 
             // cb_StopBit
             // 
             this.cb_StopBit.FormattingEnabled = true;
             this.cb_StopBit.Location = new System.Drawing.Point(55, 124);
             this.cb_StopBit.Name = "cb_StopBit";
-            this.cb_StopBit.Size = new System.Drawing.Size(89, 20);
+            this.cb_StopBit.Size = new System.Drawing.Size(91, 20);
             this.cb_StopBit.TabIndex = 11;
+            this.cb_StopBit.SelectedIndexChanged += new System.EventHandler(this.cb_StopBit_SelectedIndexChanged);
             // 
             // lab_StopBit
             // 
@@ -115,7 +136,7 @@
             this.cb_DataBit.FormattingEnabled = true;
             this.cb_DataBit.Location = new System.Drawing.Point(55, 98);
             this.cb_DataBit.Name = "cb_DataBit";
-            this.cb_DataBit.Size = new System.Drawing.Size(89, 20);
+            this.cb_DataBit.Size = new System.Drawing.Size(91, 20);
             this.cb_DataBit.TabIndex = 9;
             // 
             // lab_DataBit
@@ -143,7 +164,7 @@
             this.cb_ParityBit.FormattingEnabled = true;
             this.cb_ParityBit.Location = new System.Drawing.Point(55, 72);
             this.cb_ParityBit.Name = "cb_ParityBit";
-            this.cb_ParityBit.Size = new System.Drawing.Size(89, 20);
+            this.cb_ParityBit.Size = new System.Drawing.Size(91, 20);
             this.cb_ParityBit.TabIndex = 6;
             // 
             // lab_BaudRate
@@ -166,19 +187,37 @@
             this.lab_Port.Text = "串口";
             this.lab_Port.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pb_PortState
+            // btn_CheckPort
             // 
-            this.pb_PortState.BackColor = System.Drawing.SystemColors.Control;
-            this.pb_PortState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pb_PortState.ErrorImage = global::Winform_SerialPortTools.Properties.Resources.BlackLED_Close_PortState;
-            this.pb_PortState.Image = global::Winform_SerialPortTools.Properties.Resources.BlackLED_Close_PortState;
-            this.pb_PortState.InitialImage = global::Winform_SerialPortTools.Properties.Resources.BlackLED_Close_PortState;
-            this.pb_PortState.Location = new System.Drawing.Point(8, 144);
-            this.pb_PortState.Name = "pb_PortState";
-            this.pb_PortState.Size = new System.Drawing.Size(39, 39);
-            this.pb_PortState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pb_PortState.TabIndex = 5;
-            this.pb_PortState.TabStop = false;
+            this.btn_CheckPort.Location = new System.Drawing.Point(8, 190);
+            this.btn_CheckPort.Name = "btn_CheckPort";
+            this.btn_CheckPort.Size = new System.Drawing.Size(66, 33);
+            this.btn_CheckPort.TabIndex = 13;
+            this.btn_CheckPort.Text = "串口检测";
+            this.btn_CheckPort.UseVisualStyleBackColor = true;
+            this.btn_CheckPort.Click += new System.EventHandler(this.btn_CheckPort_Click);
+            // 
+            // cb_Char
+            // 
+            this.cb_Char.AutoSize = true;
+            this.cb_Char.Location = new System.Drawing.Point(55, 150);
+            this.cb_Char.Name = "cb_Char";
+            this.cb_Char.Size = new System.Drawing.Size(78, 16);
+            this.cb_Char.TabIndex = 14;
+            this.cb_Char.Text = "Char 显示";
+            this.cb_Char.UseVisualStyleBackColor = true;
+            this.cb_Char.Click += new System.EventHandler(this.cb_Char_Click);
+            // 
+            // cb_Hex
+            // 
+            this.cb_Hex.AutoSize = true;
+            this.cb_Hex.Location = new System.Drawing.Point(55, 168);
+            this.cb_Hex.Name = "cb_Hex";
+            this.cb_Hex.Size = new System.Drawing.Size(72, 16);
+            this.cb_Hex.TabIndex = 15;
+            this.cb_Hex.Text = "Hex 显示";
+            this.cb_Hex.UseVisualStyleBackColor = true;
+            this.cb_Hex.Click += new System.EventHandler(this.cb_Hex_Click);
             // 
             // Form1
             // 
@@ -211,6 +250,9 @@
         private System.Windows.Forms.PictureBox pb_PortState;
         public System.Windows.Forms.ComboBox cb_PortName;
         private System.Windows.Forms.ComboBox cb_BaudRate;
+        private System.Windows.Forms.Button btn_CheckPort;
+        private System.Windows.Forms.CheckBox cb_Hex;
+        private System.Windows.Forms.CheckBox cb_Char;
 
     }
 }
